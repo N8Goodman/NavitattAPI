@@ -1,8 +1,8 @@
-defmodule NavitatBack.Models.Artist do
+defmodule NavitatBack.Clients.Artist do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias NavitatBack.Models.Artist
+  alias NavitatBack.Clients.Artist
 
   schema "artists" do
     field :name, :string

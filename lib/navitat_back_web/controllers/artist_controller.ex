@@ -1,11 +1,10 @@
 defmodule NavitatBackWeb.ArtistController do
   use NavitatBackWeb, :controller
 
-  alias NavitatBack.Models.Artist
-  alias NavitatBack.Repo
+  alias NavitatBack.Clients
 
   def index(conn, _params) do
-    artists = Repo.all(Artist)
+    artists = Clients.list_artists
     render(conn, "index.json", artists: artists)
   end
 end
