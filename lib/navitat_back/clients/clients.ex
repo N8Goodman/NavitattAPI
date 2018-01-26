@@ -9,6 +9,8 @@ defmodule NavitatBack.Clients do
     Repo.all(Artist)
   end
 
+  def get_artist!(id), do: Repo.get!(Artist, id)
+
   def create_artist(attrs \\ %{}) do
     %Artist{}
     |> Artist.changeset(attrs)

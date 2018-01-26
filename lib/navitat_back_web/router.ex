@@ -25,5 +25,7 @@ defmodule NavitatBackWeb.Router do
     pipe_through :api
 
     resources "/artists", ArtistController
+
+    get "/authenticate_instagram/:artist_id", AuthenticateInstagramController, :create
   end
 end
