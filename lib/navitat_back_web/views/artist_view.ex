@@ -6,9 +6,9 @@ defmodule NavitatBackWeb.ArtistView do
     render_many(artists, ArtistView, "artist.json")
   end
 
-  # def render("show.json", %{artist: artist}) do
-  #   render_one(artist, ArtistView, "artist.json")
-  # end
+  def render("show.json", %{artist: artist}) do
+    render_one(artist, ArtistView, "artist.json")
+  end
 
   def render("artist.json", %{artist: artist}) do
     %{id: artist.id,
