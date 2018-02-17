@@ -20,7 +20,7 @@ defmodule NavitatBack.Mixfile do
   def application do
     [
       mod: {NavitatBack.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :elixtagram, :httpotion]
     ]
   end
 
@@ -40,6 +40,8 @@ defmodule NavitatBack.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
+      {:elixtagram, "~> 0.6.0"},
+      {:httpotion, "~> 3.1.0"},
       {:cowboy, "~> 1.0"}
     ]
   end
