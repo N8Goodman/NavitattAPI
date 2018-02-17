@@ -7,4 +7,10 @@ defmodule NavitatBackWeb.ArtistController do
     artists = Clients.list_artists
     render(conn, "index.json", artists: artists)
   end
+
+  def show(conn, %{"id" => id}) do
+    artist = Clients.get_artist!(id)
+    render(conn, "show.json", artist: artist)
+  end
+
 end
