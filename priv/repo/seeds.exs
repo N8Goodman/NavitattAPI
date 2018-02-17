@@ -1,11 +1,16 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     NavitatBack.Repo.insert!(%NavitatBack.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+alias NavitatBack.Repo
+alias NavitatBack.Clients.Artist
+
+Repo.delete_all(Artist)
+Ecto.Adapters.SQL.query!(Repo, "ALTER SEQUENCE artists_id_seq RESTART WITH 1", [])
+
+Repo.insert!(
+  %Artist {
+    name: "Nathan"   
+  }
+)
+Repo.insert!(
+  %Artist {
+    name: "Tyler"   
+  }
+)
