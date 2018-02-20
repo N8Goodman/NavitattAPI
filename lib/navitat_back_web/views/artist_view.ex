@@ -13,6 +13,8 @@ defmodule NavitatBackWeb.ArtistView do
   def render("artist.json", %{artist: artist}) do
     %{id: artist.id,
       name: artist.name,
-      instagram_id: artist.instagram_id}
+      instagram_id: artist.instagram_id != nil,
+      photos: artist.photos
+    }
   end
 end
