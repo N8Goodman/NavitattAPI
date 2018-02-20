@@ -1,13 +1,19 @@
 defmodule NavitatBackWeb.AuthenticateInstagramController do
   use NavitatBackWeb, :controller
 
+  alias NavitatBackWeb.ArtistView
+
   alias NavitatBack.Clients
 
+  def update(conn, %{"id" => id, "params" => params}) do
+    artist = Clients.get_artist!(id)
+    code = params["code"]
 
-  def create(conn, %{"artist_id" => artist_id}) do
-    IO.puts "WOOOOH"
-    IO.inspect artist_id
-    artist = Clients.get_artist!(artist_id)
-    
+    Elixtagram.configure
+    {:ok, token} = Elixtagram.get_token!(code: code)
+
+    {:ok, artist} = Clients.update_artist(artist, %{instagram_id: token})
+
+    render(conn, ArtistView, "show.json", artist: artist)
   end
 end

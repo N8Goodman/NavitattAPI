@@ -16,4 +16,10 @@ defmodule NavitatBack.Clients do
     |> Artist.changeset(attrs)
     |> Repo.insert()
   end
+
+  def update_artist(%Artist{} = artist, attrs) do
+    artist
+    |> Artist.changeset(attrs)
+    |> Repo.update()
+  end
 end
