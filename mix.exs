@@ -42,6 +42,9 @@ defmodule NavitatBack.Mixfile do
       {:gettext, "~> 0.11"},
       {:elixtagram, "~> 0.6.0"},
       {:httpotion, "~> 3.1.0"},
+      {:comeonin, "~> 4.0"},
+      {:bcrypt_elixir, "~> 1.0"},
+      {:guardian, "~> 1.0"},
       {:cowboy, "~> 1.0"}
     ]
   end

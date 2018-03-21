@@ -22,6 +22,10 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :navitat_back, NavitatBack.Guardian,
+       issuer: "navitat_back",
+       secret_key: "p7t0n4Zl643jfmnYpYjYN9LNB3/g4h6NhxtWreo6Ea/cpq4C+/deRsV/B7Yc5NUG"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
